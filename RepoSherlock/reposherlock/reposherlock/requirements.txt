@@ -7,3 +7,4 @@ tree-sitter>=0.23
 tree-sitter-python>=0.23
 dnotifier>=1.0
 pytest>=8.0
+google-genai
