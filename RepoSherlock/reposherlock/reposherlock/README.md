@@ -1,6 +1,6 @@
 # RepoSherlock
 
-A terminal AI agent that investigates unfamiliar **Python** repositories. You ask a question; it
+An AI agent that can run through the terminal as well as the website that investigates unfamiliar **Python** repositories. You ask a question; it
 finds the relevant functions with Tree-sitter, builds a call graph, asks a **local** model
 (Ollama) to explain them, and prints a report with **real file names and line numbers**.
 Every investigation step is announced live through **DNotifier**.
@@ -94,11 +94,3 @@ python -m pytest -q
 | Events show `SENT, NOT CONFIRMED` | Run `python main.py doctor`. Check plan limits (3 user ids are used), and that the secret belongs to this app. |
 | `tree-sitter` install fails | `python -m pip install --upgrade pip`, then reinstall. Needs Python 3.10+ (64-bit). |
 | Garbled characters | Use Windows Terminal, or `chcp 65001`. |
-
-## Limits (be upfront in your demo)
-
-* Python only. The call graph matches calls **by name** (static), so dynamic dispatch, callbacks and
-  framework hooks are invisible and a few edges can be ambiguous (the report flags them).
-* A 3B model can be wrong. The report cites only snippet ids, and any file path or line number the model
-  invents is flagged automatically, but the explanation is still a lead, not proof.
-* It does not detect every bug and it never reproduces failures, because nothing is executed.
