@@ -12,7 +12,7 @@ from google.genai import types
 from investigator import Investigation
 from scanner import RepoIndex
 
-DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_MODEL = "gemini-3.8-flash"
 DEFAULT_TIMEOUT = 180
 
 
